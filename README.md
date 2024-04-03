@@ -21,7 +21,6 @@ Example:
 
  # Todo
  - Create info file
- - Create game image file (16:9, rendered on site 256/144, gameart.jpg)
  - Create javascipt file
 
  # Extension Directory
