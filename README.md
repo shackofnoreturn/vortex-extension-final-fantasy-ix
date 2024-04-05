@@ -56,6 +56,8 @@ Example:
 - [ ] Dark Messenger Metal Cover Replacer
 - [ ] Garnet is main character
 - [ ] FFIX Classic UI Mod
+    - ISSUE: File "sharedassets2.assets needs to go into x64 or x86 folder but the file structre isn't set up in the archive
+    - TODO: Ask author to change structure or catch issue another way
 - [ ] Fairer AF Bosses - an Alternate Fantasy Add-On
 - [ ] PC Me mods Hard Journey
 - [ ] Final Fantasy IX Doomsday
