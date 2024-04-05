@@ -4,7 +4,6 @@
 # Game Information
 Stores: Steam
 SteamApp ID: 377840
-Registry key: ?
 Structure of game directory: (where is main EXE?)
 Where should the mods be installed?: (multiple ways to install mods?)
 How are mod archives usually structured? (and how consistently?)
