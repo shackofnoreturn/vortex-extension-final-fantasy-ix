@@ -23,5 +23,4 @@ Example:
 - Upload to https://www.nexusmods.com/site
 - Manually reviewed by NexusMods
 - May take some time
-- extension need at least index.js and info.json (top level of archive)
 - category "Vortex -> User Extensions"
