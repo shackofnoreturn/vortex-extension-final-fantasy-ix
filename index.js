@@ -1,12 +1,13 @@
 const path = require('path');
 const { fs, log, util } = require('vortex-api');
-const GAME_ID = 'finalfantasy9';
+const GAME_ID 	= 'finalfantasy9';
+const GAME_NAME	= 'Final Fantasy IX';
 const STEAMAPP_ID = '377840';
 
 function main(context) {
 	context.registerGame({
 		id: GAME_ID,
-		name: 'Final Fantasy IX',
+		name: GAME_NAME,
 		mergeMods: true,
 		queryPath: findGame,
 		supportedTools: [],
