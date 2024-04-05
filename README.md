@@ -26,3 +26,12 @@ Example:
 - Manually reviewed by NexusMods
 - May take some time
 - category "Vortex -> User Extensions"
+
+# How to use
+ Only manually downloadable mods are available at the moment.
+ Download the mod archive and go to the "mods" section in Vortex.
+ There, use "install from file" and select the downloaded archive.
+
+# Tested mods
+- [ ] FFIX Scaled Battle UI
+    - installs archive to root directory
