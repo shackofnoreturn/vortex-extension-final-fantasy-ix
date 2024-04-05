@@ -4,7 +4,7 @@
 # Game Information
 Stores: Steam
 SteamApp ID: 377840
-Structure of game directory: (where is main EXE?)
+Architecture: x64
 Where should the mods be installed?: (multiple ways to install mods?)
 How are mod archives usually structured? (and how consistently?)
 
