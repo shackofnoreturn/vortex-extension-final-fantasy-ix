@@ -1,23 +1,42 @@
+const Promise = require('bluebird');
 const path = require('path');
-const { fs, log, util } = require('vortex-api');
+const { util } = require('vortex-api');
 const GAME_ID 	= 'finalfantasy9';
 const GAME_NAME	= 'Final Fantasy IX';
 const STEAMAPP_ID = '377840';
+
+function requiresLauncher(gamePath) {
+	return util.GameStoreHelper.findByAppId([STEAMAPP_ID], 'xbox')
+	  .then(() => Promise.resolve({
+		launcher: 'xbox',
+		addInfo: {
+		  appId: STEAMAPP_ID,
+		  parameters: [
+			{ appExecName: 'Game' },
+		  ],
+		}
+	  }))
+	  .catch(err => Promise.resolve(undefined));
+}
 
 function main(context) {
 	context.registerGame({
 		id: GAME_ID,
 		name: GAME_NAME,
 		mergeMods: true,
-		queryPath: findGame,
+		queryArgs: {
+			steam: [{ name: GAME_NAME }],
+		},
 		supportedTools: [],
-		queryModPath: () => '~mods',
+		queryModPath: () => '',
 		logo: 'gameart.jpg',
-		executable: () => 'FF9.exe',
+		executable: () => 'FF9_Launcher.exe',
 		requiredFiles: [
-		  'FF9.exe'
+		  'FF9_Launcher.exe',
+		  'x64/FF9.exe',
+		  'x86/FF9.exe'
 		],
-		setup: prepareForModding,
+		requiresLauncher,
 		environment: {
 		  SteamAPPId: STEAMAPP_ID,
 		},
@@ -32,12 +51,3 @@ function main(context) {
 module.exports = {
     default: main,
 };
-
-function findGame() {
-	return util.GameStoreHelper.findByAppId([STEAMAPP_ID, GOGAPP_ID])
-		.then(game => game.gamePath);
-}
-
-function prepareForModding(discovery) {
-    return fs.ensureDirWritableAsync(path.join(discovery.path, 'FINAL FANTASY IX', '~mods'));
-}
